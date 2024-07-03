@@ -24,14 +24,16 @@ export class NavigationPage extends HelperBase{
         this.navigateToSelenium();
         await this.wait(5);
         await this.tabledemo.click();
-        //await this.closeAd();
+        await this.closeAd();
     }
 
     private async closeAd() {
         try{
-                await this.page.frameLocator('iframe[name="google_ads_iframe_\\/24132379\\/INTERSTITIAL_DemoGuru99_0"]').getByLabel('Close ad').click();
+                await this.page.frameLocator('iframe[title="3rd party ad content"]').getByLabel('Close ad').click();
           }
-          catch{}          
+          catch{
+            console.log("ad not found");
+          }          
     }
 
 }
