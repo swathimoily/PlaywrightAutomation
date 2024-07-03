@@ -24,26 +24,26 @@ export class NavigationPage extends HelperBase{
     {
         await this.navigateToSelenium();
         await this.tabledemo.click();       
-        await this.page.screenshot({path:"./s1.png"})
         await this.closeAd();
         await this.navigateToSelenium();
     }
 
     private async closeAd() {
-        let try1=5;
-        while(try1>0)
-            {
-                try{
-                    await this.wait(5)
-                    await this.page.frameLocator('iframe[title="3rd party ad content"]').locator('#dismiss-button').click();
-                    console.log("clicked on the ad");
-                    break;
-                }
-              catch{
-                console.log("ad not found");
-              }  
-              try1--;
-            }
+        // let try1=5;
+        // while(try1>0)
+        //     {
+        //         try{
+        //             await this.wait(5)
+        await this.page.mouse.click(500,500);
+                    //await this.page.frameLocator('iframe[title="3rd party ad content"]').locator('#dismiss-button').click();
+            //         console.log("clicked on the ad");
+            //         break;
+            //     }
+            //   catch{
+            //     console.log("ad not found");
+            //   }  
+            //   try1--;
+            // }
                 
     }
 

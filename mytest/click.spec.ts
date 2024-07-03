@@ -4,12 +4,10 @@ import path from 'path';
 import { NavigationPage } from '../page-object/navigationPage';
 import { PageManager } from '../page-object/pageManger';
 
-
+test.use({actionTimeout:10000});
 
 test.beforeEach(async({page})=>{
     await page.goto('https://demo.guru99.com/test');
-    await page.setDefaultTimeout(10000);    
-
 })
 
 test("test1", async({page})=>{
