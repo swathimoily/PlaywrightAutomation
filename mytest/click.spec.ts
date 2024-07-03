@@ -4,9 +4,11 @@ import path from 'path';
 import { NavigationPage } from '../page-object/navigationPage';
 import { PageManager } from '../page-object/pageManger';
 
+
+
 test.beforeEach(async({page})=>{
     await page.goto('https://demo.guru99.com/test');
-    
+    await page.setDefaultTimeout(5000);    
 
 })
 
