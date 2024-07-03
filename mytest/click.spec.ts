@@ -6,18 +6,21 @@ import { PageManager } from '../page-object/pageManger';
 
 test.beforeEach(async({page})=>{
     await page.goto('https://demo.guru99.com/test');
+    
+
 })
 
 test("test1", async({page})=>{
-   
    const pm=new PageManager(page)
    await pm.navigationPage.navigateToTablemenu();  
 
 })
 
-test("test2", async({page})=>{   
-    
-    const navigationPage=new NavigationPage(page)
+test("test2", async({page})=>{ 
+      
+    const pm=new PageManager(page)
+   // const navigationPage=new NavigationPage(page)
+    await pm.navigationPage.navigateToTablemenu();
     //await navigationPage.navigateTo("Selenium","Accessing Link") 
 })
 
