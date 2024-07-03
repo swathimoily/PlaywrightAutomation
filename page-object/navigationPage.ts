@@ -1,5 +1,6 @@
 import { Locator, Page } from "@playwright/test";
 import { HelperBase } from "./helperBase";
+import path from "path";
 
 export class NavigationPage extends HelperBase{
     
@@ -24,6 +25,8 @@ export class NavigationPage extends HelperBase{
         await this.navigateToSelenium();
         await this.wait(5);
         await this.tabledemo.click();
+        await this.wait(5);
+        await this.page.screenshot({path:"./s1.png"})
         await this.closeAd();
         await this.navigateToSelenium();
     }
