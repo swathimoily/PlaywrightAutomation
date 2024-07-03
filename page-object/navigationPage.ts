@@ -21,16 +21,18 @@ export class NavigationPage extends HelperBase{
 
     async navigateToTablemenu()
     {
-        this.navigateToSelenium();
+        await this.navigateToSelenium();
         await this.wait(5);
         await this.tabledemo.click();
         await this.closeAd();
+        await this.navigateToSelenium();
     }
 
     private async closeAd() {
         try{
                 await this.page.frameLocator('iframe[title="3rd party ad content"]').getByLabel('Close ad').click();
-          }
+                console.log("clicked on the ad");
+            }
           catch{
             console.log("ad not found");
           }          
