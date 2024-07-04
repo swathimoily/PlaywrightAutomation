@@ -25,7 +25,7 @@ export class NavigationPage extends HelperBase{
         await this.navigateToSelenium();
         await this.tabledemo.click();       
         await this.closeAd();
-        await this.navigateToSelenium();
+        //await this.navigateToSelenium();
     }
 
     private async closeAd() {
