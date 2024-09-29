@@ -1,9 +1,16 @@
 name: Playwright Tests
 on:
-  push:
-    branches: [ main, master ]
-  pull_request:
-    branches: [ main, master ]
+  # Manual trigger
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Which environment to run the tests on'
+        required: true
+        default: 'staging'
+ # push:
+ # branches: [ main, master ]
+ # pull_request:
+  #  branches: [ main, master ]
 jobs:
   test:
     timeout-minutes: 60
